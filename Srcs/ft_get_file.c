@@ -6,11 +6,11 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:13:03 by amarini-          #+#    #+#             */
-/*   Updated: 2021/04/26 14:27:21 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/07/22 19:00:48 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_get_file.h"
+#include "../Includes/ft_get_file.h"
 
 int		ft_count_lines(char *path)
 {

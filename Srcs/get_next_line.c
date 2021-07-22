@@ -6,11 +6,11 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/04/21 14:18:34 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/07/22 19:16:31 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_get_file.h"
+#include "../Includes/ft_get_file.h"
 
 int		find_newline(char *str, int read)
 {
@@ -65,11 +65,11 @@ int		get_next_line(int fd, char **line)
 	if (index == -1)
 		result = read_fd(fd, &index, &leftover);
 	if (index == -1)
-		*line = ft_substr(leftover, 0, ft_strlen(leftover), 1);
+		*line = gnl_substr(leftover, 0, ft_strlen(leftover), 1);
 	else
-		*line = ft_substr(leftover, 0, index, 1);
+		*line = gnl_substr(leftover, 0, index, 1);
 	index++;
-	leftover = ft_substr(leftover, index, ft_strlen(leftover) - index, 0);
+	leftover = gnl_substr(leftover, index, ft_strlen(leftover) - index, 0);
 	if (result == -1 || (result == 0 && ft_strlen(leftover) == 0))
 	{
 		free(leftover);
