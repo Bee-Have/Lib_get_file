@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:13:03 by amarini-          #+#    #+#             */
-/*   Updated: 2021/07/22 19:00:48 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/04 17:00:37 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_get_file(char *path, char ***content)
 
 	index = 0;
 	read = 1;
-	length = ft_count_lines(path) - 1;
+	length = ft_count_lines(path);
 	fd = open(path, O_RDONLY);
 	(*content) = (char **)malloc((length + 1) * sizeof(char *));
 	if (!(*content))
