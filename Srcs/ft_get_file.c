@@ -6,13 +6,13 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:13:03 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/04 17:00:37 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/19 12:38:19 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/ft_get_file.h"
 
-int		ft_count_lines(char *path)
+int	ft_count_lines(char *path)
 {
 	int		result;
 	int		read;
@@ -32,7 +32,7 @@ int		ft_count_lines(char *path)
 	return (result);
 }
 
-int		ft_get_file(char *path, char ***content)
+int	ft_get_file(char *path, char ***content)
 {
 	int		length;
 	int		index;

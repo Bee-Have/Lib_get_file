@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:03:00 by amarini-          #+#    #+#             */
-/*   Updated: 2021/07/22 19:15:41 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/19 12:43:29 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*gnl_substr(char *str, int start, int len, int line)
 	char	*result;
 
 	i = 0;
-	if (start > ft_strlen(str))
-		return (str);
 	if (line == 0 && start == 0)
 	{
 		start = ft_strlen(str) - 1;
@@ -27,7 +25,8 @@ char	*gnl_substr(char *str, int start, int len, int line)
 	}
 	if (line == 1 && str[start] == '\n')
 		start++;
-	if (!(result = (char *)malloc((len + 1) * sizeof(char))))
+	result = (char *)malloc((len + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
 	result[len] = '\0';
 	while (str[start] != '\0' && i < len)

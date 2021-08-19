@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:14:11 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/04 16:30:26 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/19 12:40:34 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #  define BUFFER_SIZE 10
 # endif
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "../../libft_duck/Includes/libft.h"
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "../../libft_duck/Includes/libft.h"
 
 int		find_newline(char *str, int read);
 int		read_fd(int fd, int *index, char **leftover);
@@ -31,4 +31,4 @@ char	*gnl_substr(char *str, int start, int len, int line);
 int		ft_get_file(char *path, char ***content);
 int		ft_count_lines(char *path);
 
-# endif
+#endif

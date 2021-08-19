@@ -6,13 +6,13 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/04 16:50:51 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/19 12:38:35 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/ft_get_file.h"
 
-int		find_newline(char *str, int read)
+int	find_newline(char *str, int read)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ int		find_newline(char *str, int read)
 	return (-1);
 }
 
-int		read_fd(int fd, int *index, char **leftover)
+int	read_fd(int fd, int *index, char **leftover)
 {
 	int		result;
 	char	*buffer;
@@ -50,7 +50,7 @@ int		read_fd(int fd, int *index, char **leftover)
 	return (result);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*leftover = NULL;
 	int				result;
