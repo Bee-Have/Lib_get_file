@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/19 12:38:35 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/08/20 11:51:51 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	read_fd(int fd, int *index, char **leftover)
 {
 	int		result;
 	char	*buffer;
+	char	*tmp;
 
 	result = 1;
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
@@ -43,7 +44,9 @@ int	read_fd(int fd, int *index, char **leftover)
 			return (-1);
 		result = read(fd, buffer, BUFFER_SIZE);
 		buffer[result] = '\0';
-		*leftover = ft_strjoin(*leftover, buffer);
+		tmp = ft_strjoin(*leftover, buffer);
+		free(*leftover);
+		*leftover = tmp;
 		*index = find_newline(*leftover, result);
 	}
 	free(buffer);
