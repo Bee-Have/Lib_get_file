@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/31 18:36:21 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/12/01 19:19:14 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	read_fd(int fd, int *index, char **leftover)
 		if (!buffer)
 			return (-1);
 		result = read(fd, buffer, BUFFER_SIZE);
+		printf("result-[%d]\n", result);
+		printf("errno-[%d]\n", errno);
 		buffer[result] = '\0';
 		tmp = ft_strjoin(*leftover, buffer);
 		free(*leftover);
