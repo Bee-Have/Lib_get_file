@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/12/01 19:19:14 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:08:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	find_newline(char *str, int read)
 			return (i);
 		i++;
 	}
-	if (read == 0 && ft_strlen(str) == 0)
+	if ((read > 0 && read < BUFFER_SIZE) || (read == 0 && ft_strlen(str) == 0))
 		return (i);
 	return (-1);
 }
@@ -43,8 +43,6 @@ int	read_fd(int fd, int *index, char **leftover)
 		if (!buffer)
 			return (-1);
 		result = read(fd, buffer, BUFFER_SIZE);
-		printf("result-[%d]\n", result);
-		printf("errno-[%d]\n", errno);
 		buffer[result] = '\0';
 		tmp = ft_strjoin(*leftover, buffer);
 		free(*leftover);
