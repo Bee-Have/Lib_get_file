@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:13:03 by amarini-          #+#    #+#             */
-/*   Updated: 2021/12/01 18:45:07 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/12/25 18:33:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_get_file.h"
+#include "ft_get_file.h"
 
 int	ft_count_lines(char *path)
 {

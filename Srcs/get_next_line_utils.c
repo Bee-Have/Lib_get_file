@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:03:00 by amarini-          #+#    #+#             */
-/*   Updated: 2021/08/19 12:43:29 by amarini-         ###   ########.fr       */
+/*   Updated: 2021/12/25 18:33:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_get_file.h"
+#include "ft_get_file.h"
 
 char	*gnl_substr(char *str, int start, int len, int line)
 {

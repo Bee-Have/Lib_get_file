@@ -6,11 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/12/06 17:08:31 by user42           ###   ########.fr       */
+/*   Updated: 2021/12/25 18:34:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/ft_get_file.h"
+#include "ft_get_file.h"
 
 int	find_newline(char *str, int read)
 {

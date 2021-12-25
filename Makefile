@@ -2,7 +2,7 @@ NAME = libgetfile.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INC_DIR = ./Includes/ft_get_file
+INC_DIR = ./Includes/
 INCLUDES = -I$(INC_DIR)
 OBJS_DIR = Objs
 SRCS_DIR = $(shell find Srcs -type d)
