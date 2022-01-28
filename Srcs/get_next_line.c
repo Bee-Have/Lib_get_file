@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2022/01/28 18:51:09 by amarini-         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:06:14 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,7 @@ int	get_next_line(int fd, char **line)
 	index = -1;
 	result = 1;
 	if (fd == -42 && leftover)
-	{
-		free(leftover);
-		leftover = NULL;
-		return (0);
-	}
+		return (del_leftover(&leftover, 0));
 	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
 		return (-1);
 	if (leftover != NULL && leftover[0] != '\0')
@@ -80,10 +76,13 @@ int	get_next_line(int fd, char **line)
 	index++;
 	leftover = gnl_substr(leftover, index, ft_strlen(leftover) - index, 0);
 	if (result == -1 || (result == 0 && ft_strlen(leftover) == 0))
-	{
-		free(leftover);
-		leftover = NULL;
-		return (result);
-	}
+		return (del_leftover(&leftover, result));
 	return (1);
+}
+
+int	del_leftover(char	**leftover, int ret)
+{
+	free(*leftover);
+	*leftover = NULL;
+	return (ret);
 }
