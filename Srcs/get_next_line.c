@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2021/12/25 18:34:13 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/28 18:51:09 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,13 @@ int	get_next_line(int fd, char **line)
 
 	index = -1;
 	result = 1;
-	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || fd == 42 || !line)
+	if (fd == -42 && leftover)
+	{
+		free(leftover);
+		leftover = NULL;
+		return (0);
+	}
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
 		return (-1);
 	if (leftover != NULL && leftover[0] != '\0')
 		index = find_newline(leftover, 0);
