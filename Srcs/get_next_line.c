@@ -6,7 +6,7 @@
 /*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:16:18 by amarini-          #+#    #+#             */
-/*   Updated: 2022/01/28 19:06:14 by amarini-         ###   ########.fr       */
+/*   Updated: 2022/01/31 12:58:51 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	find_newline(char *str, int read)
 			return (i);
 		i++;
 	}
-	if ((read > 0 && read < BUFFER_SIZE) || (read == 0 && ft_strlen(str) == 0))
+	if ((read > 0 && read < BUFFER_SIZE)
+		|| (read == 0 && gnl_strlen(str) == 0))
 		return (i);
 	return (-1);
 }
@@ -44,7 +45,7 @@ int	read_fd(int fd, int *index, char **leftover)
 			return (-1);
 		result = read(fd, buffer, BUFFER_SIZE);
 		buffer[result] = '\0';
-		tmp = ft_strjoin(*leftover, buffer);
+		tmp = gnl_strjoin(*leftover, buffer);
 		free(*leftover);
 		*leftover = tmp;
 		*index = find_newline(*leftover, result);
@@ -70,12 +71,12 @@ int	get_next_line(int fd, char **line)
 	if (index == -1)
 		result = read_fd(fd, &index, &leftover);
 	if (index == -1)
-		*line = gnl_substr(leftover, 0, ft_strlen(leftover), 1);
+		*line = gnl_substr(leftover, 0, gnl_strlen(leftover), 1);
 	else
 		*line = gnl_substr(leftover, 0, index, 1);
 	index++;
-	leftover = gnl_substr(leftover, index, ft_strlen(leftover) - index, 0);
-	if (result == -1 || (result == 0 && ft_strlen(leftover) == 0))
+	leftover = gnl_substr(leftover, index, gnl_strlen(leftover) - index, 0);
+	if (result == -1 || (result == 0 && gnl_strlen(leftover) == 0))
 		return (del_leftover(&leftover, result));
 	return (1);
 }

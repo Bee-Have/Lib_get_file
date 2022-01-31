@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amarini- <amarini-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 14:13:03 by amarini-          #+#    #+#             */
-/*   Updated: 2021/12/25 18:33:49 by user42           ###   ########.fr       */
+/*   Updated: 2022/01/31 12:54:51 by amarini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_count_lines(char *path)
 
 	result = 0;
 	has_read = 1;
-	line = ft_strdup("");
+	line = gnl_strdup("");
 	fd = open(path, O_RDONLY);
 	if (read(fd, line, 1) <= 0)
 	{
